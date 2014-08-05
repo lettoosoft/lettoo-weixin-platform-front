@@ -10,7 +10,8 @@
  */
 var app = angular
     .module('lettoo-weixin-app', [
-        'ngRoute'
+        'ngRoute',
+        'ngResource'
     ])
     .config(function ($routeProvider) {
         $routeProvider
