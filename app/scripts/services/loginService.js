@@ -14,7 +14,7 @@ app.factory('User', ['$http', function ($http) {
             scope.message = '成功';
         }).error(function (data) {
             console.log(data);
-            scope.message = data;
+            scope.message = data.error;
         });
     };
 
