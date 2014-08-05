@@ -1,9 +1,9 @@
 'use strict';
 
-app.controller('loginController', function($scope, loginService){
+app.controller('loginController', function($scope, User){
     $scope.message = '';
 
     $scope.login = function(user){
-        loginService.login(user, $scope);
+        User.login(user, $scope);
     }
 });

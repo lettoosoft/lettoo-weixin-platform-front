@@ -1,15 +1,22 @@
 'use strict';
 
-app.factory('loginService', function(){
-    return {
-        login: function(user, scope){
-            if (user.email === 'abc@abc.com' && user.password === '111111') {
-                scope.message = '成功';
-                return true;
-            } else {
-                scope.message = '失败';
-                return false;
-            }
-        }
-    }
-});
+app.factory('User', ['$http', function ($http) {
+    var User = function (data) {
+        angular.extend(this, data);
+    };
+
+    User.login = function (user, scope) {
+        var url = 'http://121.40.126.220/api/v1/user/login/';
+
+        return $http.post(url, user).success(function (data) {
+            //IMPORTANT: You need to activate always_return_data in your ressource (see example)
+            user.id = data.id;
+            scope.message = '成功';
+        }).error(function (data) {
+            console.log(data);
+            scope.message = data;
+        });
+    };
+
+    return User;
+}]);
