@@ -1,7 +1,8 @@
 <script type="text/javascript">
     $('#birthday').datepicker();
 </script>
-<form name="login_form" class="form-horizontal" role="form" ng-submit="signUp(user)" novalidate>
+<form name="signUp_form" class="form-horizontal" role="form"  ng-submit="signUp_form.$valid&&signUp(user)" novalidate>
+    {{signUp_form.$valid}}
     <div class="form-group">
         <label for="inputEmail" class="col-sm-offset-1 col-sm-2 control-label">Email</label>
 
@@ -14,10 +15,10 @@
     </div>
 
     <div class="form-group">
-        <label for="inputPassword" class="col-sm-offset-1 col-sm-2 control-label">Password</label>
+        <label for="inputPassword"  class="col-sm-offset-1 col-sm-2 control-label">Password</label>
 
         <div class="col-sm-7">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password"  required ng-model="user.password">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password"  required ng-model="user.password" ng-minlength=6 ng-maxlength=18>
         </div>
         <div class="col-sm-1" style="line-height:34px;color:#c00;">
             <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
@@ -28,10 +29,13 @@
         <label for="PasswordConfirm" class=" col-sm-3 control-label">Confirm password</label>
 
         <div class="col-sm-7">
-            <input type="password" class="form-control" id="PasswordConfirm" placeholder="Confirm password" required >
+            <input type="password" class="form-control" id="PasswordConfirm" placeholder="Confirm password" ng-class="{'ng-dirty':user.password!=user.password2}" required ng-model="user.password2" ng-minlength=6 ng-maxlength=18 >
         </div>
         <div class="col-sm-1" style="line-height:34px;color:#c00;">
             <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
+        </div>
+        <div class="col-sm-7 col-sm-offset-3" ng-show="user.password!=user.password2">
+            两次密码不一致！
         </div>
     </div>
 
@@ -66,7 +70,7 @@
     <div class="form-group">
         <label for="date" class="col-sm-3 control-label">Date of birth</label>
         <div class="input-append date col-sm-3 " id="date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-            <input class="span2" id="birthday" size="16" type="text" value="12-02-2012" ng-model="user.birthday">
+            <input class="span2 form-control" id="birthday" size="16" type="text" value="12-02-2012" ng-model="user.birthday">
             <span class="add-on"><i class="icon-th"></i></span>
         </div>
     </div>
@@ -75,4 +79,5 @@
             <button type="submit" class="btn btn-default">Sign up</button>
         </div>
     </div>
+    <div>{{message}}</div>
 </form>
