@@ -1,6 +1,4 @@
-
 <form name="signUp_form" class="form-horizontal" role="form"  ng-submit="signUp_form.$valid&&signUp(user)" novalidate>
-    {{signUp_form.$valid}}
     <div class="form-group">
         <label for="inputEmail" class="col-sm-offset-1 col-sm-2 control-label">Email</label>
 
@@ -11,10 +9,8 @@
             <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
         </div>
     </div>
-
     <div class="form-group">
         <label for="inputPassword"  class="col-sm-offset-1 col-sm-2 control-label">Password</label>
-
         <div class="col-sm-7">
             <input type="password" class="form-control" id="inputPassword" placeholder="Password"  required ng-model="user.password" ng-minlength=6 ng-maxlength=18>
         </div>
@@ -22,10 +18,8 @@
             <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
         </div>
     </div>
-
     <div class="form-group">
         <label for="PasswordConfirm" class=" col-sm-3 control-label">Confirm password</label>
-
         <div class="col-sm-7">
             <input type="password" class="form-control" id="PasswordConfirm" placeholder="Confirm password" ng-class="{'ng-dirty':user.password!=user.password2}" required ng-model="user.password2" ng-minlength=6 ng-maxlength=18 >
         </div>
@@ -39,20 +33,16 @@
     <hr>
     <div class="form-group">
         <label for="FirstName" class=" col-sm-3 control-label">FirstName</label>
-
         <div class="col-sm-7">
             <input type="text" class="form-control" id="FirstName" placeholder="FirstName" ng-model="user.firstname">
         </div>
     </div>
-
     <div class="form-group">
         <label for="LastName" class=" col-sm-3 control-label">LastName</label>
-
         <div class="col-sm-7">
             <input type="text" class="form-control" id="LastName" placeholder="LastName" ng-model="user.lastname" >
         </div>
     </div>
-
     <div class="form-group">
         <label for="checkbox" class=" col-sm-3 control-label">Gender</label>
         <div class="col-sm-3" >
