@@ -1,23 +1,70 @@
 <form name="login_form" class="form-horizontal" role="form" ng-submit="login(user)" novalidate>
     <div class="form-group">
-        <label for="inputPassword3" class="col-sm-offset-1 col-sm-2 control-label">Email</label>
+        <label for="inputEmail" class="col-sm-offset-1 col-sm-2 control-label">Email</label>
 
         <div class="col-sm-7">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Email" ng-model="user.password" required required>
+            <input type="Email" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email" required>
+        </div>
+        <div class="col-sm-1" style="line-height:34px;color:#c00;">
+            <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-offset-1 col-sm-2 control-label">Password</label>
+
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password" required>
+        </div>
+        <div class="col-sm-1" style="line-height:34px;color:#c00;">
+            <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="PasswordConfirm" class=" col-sm-3 control-label">Confirm password</label>
+
+        <div class="col-sm-7">
+            <input type="password" class="form-control" id="PasswordConfirm" placeholder="Confirm password" ng-model="user.password" required>
+        </div>
+        <div class="col-sm-1" style="line-height:34px;color:#c00;">
+            <span class="glyphicon glyphicon-asterisk" style="font-size:5px;"></span>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+        <label for="FirstName" class=" col-sm-3 control-label">FirstName</label>
+
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="FirstName" placeholder="FirstName" ng-model="" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="LastName" class=" col-sm-3 control-label">LastName</label>
+
+        <div class="col-sm-7">
+            <input type="text" class="form-control" id="LastName" placeholder="LastName" ng-model="" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="checkbox" class=" col-sm-3 control-label">Gender</label>
+        <div class="col-sm-3" >
+            <select class="form-control">
+                <option value="" selected>Select</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label for="inputPassword3" class="col-sm-offset-1 col-sm-2 control-label">Password</label>
-
-        <div class="col-sm-7">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="user.password" required required>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputPassword3" class=" col-sm-3 control-label">Confirm password</label>
-
-        <div class="col-sm-7">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Confirm password" ng-model="user.password" required required>
+        <label for="date" class="col-sm-3 control-label">Date of birth</label>
+        <div class="input-append date col-sm-3 " id="date" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+            <input class="span2" size="16" type="text" value="12-02-2012">
+            <span class="add-on"><i class="icon-th"></i></span>
         </div>
     </div>
 </form>

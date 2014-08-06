@@ -28,7 +28,7 @@ var app = angular
                 controller: 'loginController'
             })
             .when('/signUp', {
-                templateUrl: 'views/tpl/signUp.html',
+                templateUrl: 'views/tpl/signUp.tpl.html',
                 controller: 'signUpController'
             })
             .otherwise({

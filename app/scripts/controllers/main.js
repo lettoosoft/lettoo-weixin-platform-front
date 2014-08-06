@@ -7,6 +7,7 @@
  * # MainCtrl
  * Controller of the lettoo-weixin-app
  */
+ $('.datepicker').datepicker()
 app.controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
         {title: 'HTML5 Boilerplate', content: 'HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.'},
