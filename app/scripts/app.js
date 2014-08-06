@@ -27,6 +27,10 @@ var app = angular
                 templateUrl: 'views/login.html',
                 controller: 'loginController'
             })
+            .when('/signUp', {
+                templateUrl: 'views/tpl/signUp.html',
+                controller: 'signUpController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
