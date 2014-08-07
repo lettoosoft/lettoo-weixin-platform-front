@@ -31,6 +31,10 @@ var app = angular
                 templateUrl: 'views/tpl/signUp.tpl.html',
                 controller: 'signUpController'
             })
+            .when('/upload', {
+                templateUrl: 'views/tpl/upload.tpl.html',
+                controller: 'uploadCtrl'
+            })            
             .otherwise({
                 redirectTo: '/'
             });

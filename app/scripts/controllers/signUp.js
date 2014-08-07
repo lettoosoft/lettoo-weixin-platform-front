@@ -1,9 +1,10 @@
 'use strict';
 
-app.controller('signUpController', function($scope,NewUser){
+app.controller('signUpController', function($scope,NewUser,$location){
 	$('#birthday').datepicker();
     $scope.signUp = function(user){
         NewUser.signUp(user, $scope);
+        $location.url("/upload");
     }
     $scope.pswdvalid=function(user) {
         if(user){
